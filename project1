@@ -1,0 +1,55 @@
+using System;
+
+namespace project1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Product product1 = new Product();
+            product1.productName = "telefon";
+            product1.productPrice = 500;
+
+
+            Product product2 = new Product();
+            product2.productName = "bilgisayar";
+            product2.productPrice = 500;
+
+            Product[] products = new Product[] { product1, product2 };
+
+            Console.WriteLine("foreach basliyor=========================================================================");
+            foreach (var item in products)
+            {
+                Console.WriteLine("Urun Adi :" + item.productName + "" + "Urun Fiyati :" + "" + item.productPrice);
+            }
+
+            Console.WriteLine("for basliyor=========================================================================");
+
+            for (int i = 0; i < products.Length; i++)
+            {
+                Console.WriteLine("Urun Adi :" + "" + products[i].productName + "" + "Urun Fiyati :" + products[i].productPrice);
+
+            }
+            Console.WriteLine("while basliyor=========================================================================");
+            int a = 0;
+            while(products.Length > a)
+            {
+                Console.WriteLine("urun adi" + products[a].productName + "" + "urun fiyati :" + products[a].productPrice);
+                a++;
+            }
+
+
+        }
+
+
+        class  Product
+        {
+            public string productName { get; set; }
+            public int productPrice { get; set; }
+        }
+
+
+
+
+    }
+} 
